@@ -6,6 +6,10 @@ A cada método http se le ha asociado un controlador cuyo código puede encontra
 Para utilizar la aplicación es necesario añadir las claves de acceso como parametros: username=Ruben&pass=123.
 Los métodos POST, PUT y DELETE requieren de un parametro name con el nombre de la tarea.
 
+## Readme del repositorio base
+
+https://github.com/AraManjon/typescript-tdd-template.git
+
 # 🦋 TypeScript TDD Template
 
 ⚡ Start your Node.js project with Typescript using Test Driven Development (TDD) practices.
