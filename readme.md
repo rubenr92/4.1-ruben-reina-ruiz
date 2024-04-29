@@ -1,3 +1,11 @@
+# App de lista de tareas
+La aplicación está escrita utilizando Node.js y express.
+Consta de una única ruta, /tasks y acepta peticiones de 4 tipos, GET, POST, PUT y DELETE para ver, añadir, modificar el estado y
+borrar tareas.
+A cada método http se le ha asociado un controlador cuyo código puede encontrarse en /src/backend/controllers.
+Para utilizar la aplicación es necesario añadir las claves de acceso como parametros: username=Ruben&pass=123.
+Los métodos POST, PUT y DELETE requieren de un parametro name con el nombre de la tarea.
+
 # 🦋 TypeScript TDD Template
 
 ⚡ Start your Node.js project with Typescript using Test Driven Development (TDD) practices.

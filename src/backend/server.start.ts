@@ -9,3 +9,5 @@ try {
 process.on("uncaughtException", () => {
 	process.exit(1);
 });
+
+//"dev": "NODE_ENV=dev ts-node-dev --inspect --respawn --pretty --transpile-only src/backend/server.start.ts",

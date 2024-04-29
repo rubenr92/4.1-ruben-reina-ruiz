@@ -3,6 +3,12 @@ import cors from "cors";
 import express from "express";
 import helmet from "helmet";
 
+import { authenticate } from "./controllers/auth";
+import { createTask } from "./controllers/createtask";
+import { eliminateTask } from "./controllers/eliminatetask";
+import { showTasks } from "./controllers/showtasks";
+import { toogleTask } from "./controllers/toogletask";
+
 export class Server {
 	private readonly express: express.Express;
 	private readonly port: string;
@@ -14,6 +20,17 @@ export class Server {
 		this.express.use(cors());
 		this.express.use(json());
 		this.express.use(urlencoded({ extended: true }));
+		this.express.use((req, res, next) => {
+			res.set({ "Cache-Control": `no-cache` });
+			next();
+		});
+		this.express.use(authenticate);
+		this.express
+			.route("/tasks")
+			.get(showTasks)
+			.post(createTask)
+			.put(toogleTask)
+			.delete(eliminateTask);
 	}
 
 	async listen(): Promise<void> {
